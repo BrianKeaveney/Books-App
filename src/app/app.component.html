@@ -7,6 +7,8 @@
     </button> 
   </form>
 
-  <!-- <div *ngIf="bookData">
-      <h3 *ngIf="bookData">Book: {{bookData.items[0].volumeInfo.authors[0]}}</h3>
-  </div> -->
+  <div *ngIf="bookData">
+      <h3 *ngIf="bookData">Book: {{bookData.items[0].volumeInfo.description}}</h3>
+  </div>
+
+  <app-book-search></app-book-search>

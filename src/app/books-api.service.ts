@@ -1,4 +1,4 @@
-import { Booksresponse } from './ibooksresponse';
+import { IBooksResponse } from './ibooksresponse';
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, observable} from 'rxjs';
@@ -14,9 +14,9 @@ export class BooksApiService {
 
   constructor(private _http: HttpClient) { }
 
-  getBookData(bookName): Observable<Booksresponse> {
+  getBookData(bookName): Observable<IBooksResponse> {
     console.log("URL: "+this._siteURL+bookName+this._key);
-    return this._http.get<Booksresponse>(this._siteURL+bookName+this._key).pipe(
+    return this._http.get<IBooksResponse>(this._siteURL+bookName+this._key).pipe(
       tap(data => console.log("All " +JSON.stringify(data))),
       catchError(this.handleError));
   }
