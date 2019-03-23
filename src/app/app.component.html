@@ -1,14 +1,7 @@
-<form>
-    <div class="field">
-      <input type="text" name="movie-name" placeholder="Enter book Name" #bookName>
-    </div>
-    <button (click)="getBookDetails(bookName.value)" type="submit">
-      Get the movie details
-    </button> 
-  </form>
+<nav>
+    <button routerLink="/booksearch">Book Search</button>
+    <button routerLink="/yourbooks">Book Search</button>
+    <button routerLink="/cart">Cart</button>
+</nav>
 
-  <div *ngIf="bookData">
-      <h3 *ngIf="bookData">Book: {{bookData.items[0].volumeInfo.description}}</h3>
-  </div>
-
-  <app-book-search></app-book-search>
+<router-outlet></router-outlet>

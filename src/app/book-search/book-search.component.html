@@ -1,3 +1,12 @@
-<p>
-  book-search works!
-</p>
+<form>
+  <div class="field">
+    <input type="text" name="movie-name" placeholder="Enter book Name" #bookName>
+  </div>
+  <button (click)="getBookDetails(bookName.value)" type="submit">
+    Get the movie details
+  </button> 
+</form>
+
+<div *ngIf="bookData">
+    <h3 *ngIf="bookData">Book: {{bookData.items[0].volumeInfo.description}}</h3>
+</div>
