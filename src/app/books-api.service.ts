@@ -1,4 +1,4 @@
-import { Booksresponse } from './booksresponse';
+import { Booksresponse } from './ibooksresponse';
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, observable} from 'rxjs';
@@ -10,7 +10,7 @@ import {catchError, tap} from 'rxjs/operators';
 export class BooksApiService {
 
   private _siteURL = 'https://www.googleapis.com/books/v1/volumes?q=';
-  private _key = 'AIzaSyB52oBdf6YJ4h3vNVFiBfB7el25hXXCUOA';
+  private _key = '&key=AIzaSyB52oBdf6YJ4h3vNVFiBfB7el25hXXCUOA';
 
   constructor(private _http: HttpClient) { }
 
