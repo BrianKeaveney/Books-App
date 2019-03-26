@@ -4,16 +4,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BookSearchComponent } from './book-search/book-search.component';
-import { YourBooksComponent } from './your-books/your-books.component';
-import { CartComponent } from './cart/cart.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BookListComponent } from './book-list/book-list.component';
+import { UserLibraryComponent } from './user-library/user-library.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookSearchComponent,
-    YourBooksComponent,
-    CartComponent
+    BookListComponent,
+    UserLibraryComponent
   ],
   imports: [
     BrowserModule,
