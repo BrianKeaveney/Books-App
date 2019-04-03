@@ -1,12 +1,13 @@
-<form>
-  <div class="field">
+<div class="row">
+  <div class="col-sm-2">
     <input type="text" name="movie-name" placeholder="Enter book Name" #bookName>
   </div>
-  <button (click)="getBookDetails(bookName.value)" type="submit">
-    Get the movie details
-  </button> 
-</form>
+  <div class="col-sm-1">
+    <button (click)="getBookDetails(bookName.value)" type="button" class="btn btn-primary">
+        Get the movie details
+    </button>
+  </div>
+</div> 
+<br>
 
-<div *ngIf="bookData">
-    <h3 *ngIf="bookData">Book: {{bookData.items[0].volumeInfo.description}}</h3>
-</div>
+<app-book-list [bookData]="bookData"></app-book-list>

@@ -7,13 +7,15 @@ import { BookSearchComponent } from './book-search/book-search.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookListComponent } from './book-list/book-list.component';
 import { UserLibraryComponent } from './user-library/user-library.component';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookSearchComponent,
     BookListComponent,
-    UserLibraryComponent
+    UserLibraryComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,

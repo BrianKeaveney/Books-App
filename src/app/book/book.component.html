@@ -1,0 +1,12 @@
+<div *ngIf="book">
+  <div class="row">
+    <div class="col-sm-2">
+        <img  src={{book.volumeInfo.imageLinks.thumbnail}}>
+    </div>
+      <div class="col-sm-7">
+          <h4>{{book.volumeInfo.title}}</h4>
+          <h4>{{book.volumeInfo.authors[0]}}</h4>
+      </div>
+  </div>
+  <br>
+</div>

@@ -10,4 +10,14 @@ export interface IItems {
 export interface IVolumenInfo {
     title:string;
     authors:string[];
+    publisher: string;
+    description: string;
+    averageRating: string;
+    language: string;
+    imageLinks: IImageLinks;
+}
+
+export interface IImageLinks{
+    smallThumbnail:string;
+    thumbnail:string;
 }
