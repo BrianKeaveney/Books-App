@@ -18,14 +18,14 @@ import { environment } from 'src/environments/environment';
     BookSearchComponent,
     BookListComponent,
     UserLibraryComponent,
-    BookComponent,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    BookComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

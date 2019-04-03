@@ -1,15 +1,8 @@
-<form>
-  <div class="row">
-    <div class="col-sm-3">
-      <input type="text" name="movie-name" placeholder="Enter book Name" id="search-bar" #bookName>
-    </div>
-    <div class="col-sm-2">
-      <button (click)="getBookDetails(bookName.value)" type="submit" class="btn btn-primary">
-          Get the movie details
-      </button>
-    </div>
-  </div>
+<form class="form-inline">
+    <input type="text" name="movie-name" placeholder="Enter book Name" class="form-control mr-sm-2" #bookName>
+    <button (click)="getBookDetails(bookName.value)" type="submit" class="btn btn-outline-primary my-2 my-sm-0">
+        Search
+    </button>
 </form> 
-<br>
 
 <app-book-list [bookData]="bookData"></app-book-list>
