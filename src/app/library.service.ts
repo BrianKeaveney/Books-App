@@ -18,7 +18,7 @@ export class LibraryService {
    getBookLibrary():Observable<Book[]>{
     this.libraryData = this.userLibraryCollection.valueChanges();
 
-    this.userLibraryCollection.valueChanges().subscribe(data => console.log("getUserLibrary: " + JSON.stringify(data)));
+    // this.userLibraryCollection.valueChanges().subscribe(data => console.log("getUserLibrary: " + JSON.stringify(data)));
     return this.libraryData;
    }
 

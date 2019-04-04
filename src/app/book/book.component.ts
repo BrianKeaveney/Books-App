@@ -16,9 +16,8 @@ export class BookComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTheBook(title:string):boolean{
-    let tempBook = new Book(title)
-    console.log("function called");
+  addTheBook(title:string, author:string, thumbnail:string):boolean{
+    let tempBook = new Book(title, Date.now(), author, thumbnail)
     this._library.addBook(tempBook);
     return false;
   }

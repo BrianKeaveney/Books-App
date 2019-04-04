@@ -17,7 +17,6 @@ export class BooksApiService {
   getBookData(bookName): Observable<IBooksResponse> {
     console.log("URL: "+this._siteURL+bookName+this._key);
     return this._http.get<IBooksResponse>(this._siteURL+bookName+this._key).pipe(
-      tap(data => console.log("All " +JSON.stringify(data))),
       catchError(this.handleError));
   }
 

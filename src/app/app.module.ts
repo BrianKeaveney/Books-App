@@ -13,6 +13,8 @@ import { BookComponent } from './book/book.component';
 import { environment } from 'src/environments/environment';
 import { UserBooksListComponent } from './user-books-list/user-books-list.component';
 import { UserBookComponent } from './user-book/user-book.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [

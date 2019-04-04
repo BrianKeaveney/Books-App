@@ -1,4 +1,6 @@
+import { Book } from './../book';
 import { Component, OnInit, Input } from '@angular/core';
+import { _ } from 'underscore';
 
 @Component({
   selector: 'app-user-books-list',
@@ -7,11 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserBooksListComponent implements OnInit {
 
-  @Input() libraryData;
+  @Input() libraryData: Book[];
   constructor() { }
 
   ngOnInit() {
-    this.libraryData.dateAdded.sort((n1, n2) => n1 - n2);
   }
 
 }

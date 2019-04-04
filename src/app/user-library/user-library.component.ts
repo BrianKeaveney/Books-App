@@ -1,5 +1,7 @@
+import { Book } from './../book';
 import { LibraryService } from './../library.service';
 import { Component, OnInit } from '@angular/core';
+import { _ } from 'underscore';
 
 @Component({
   selector: 'app-user-library',
@@ -9,12 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserLibraryComponent implements OnInit {
 
-  libraryData;
+  libraryData: Book[];
   constructor(private _library: LibraryService) { }
 
   ngOnInit() {
     this._library.getBookLibrary().subscribe(libraryData =>
-      {this.libraryData = libraryData});
+      {this.libraryData = libraryData; this.libraryData = _.sortBy(this.libraryData, "dateAdded");
+    this.libraryData.reverse();});
   }
 
 }

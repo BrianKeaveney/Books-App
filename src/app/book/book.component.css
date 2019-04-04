@@ -2,6 +2,9 @@
     padding: 10px;
 }
 
-.float-right{
-    margin-bottom: 60px;
+
+.btn-primary{
+    bottom: 0;
+    position: absolute;
+    right: 10px;
 }
