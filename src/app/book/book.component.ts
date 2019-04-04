@@ -1,3 +1,4 @@
+import { Book } from './../book';
 import { LibraryService } from './../library.service';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -16,8 +17,9 @@ export class BookComponent implements OnInit {
   }
 
   addTheBook(title:string):boolean{
+    let tempBook = new Book(title)
     console.log("function called");
-    this._library.addBook({title});
+    this._library.addBook(tempBook);
     return false;
   }
 }

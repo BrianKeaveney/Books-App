@@ -22,8 +22,8 @@ export class LibraryService {
     return this.libraryData;
    }
 
-   addBook(book): void {
-    this.userLibraryCollection.add(book);
+   addBook(book: Book): void {
+    this.userLibraryCollection.add(JSON.parse(JSON.stringify(book)));
    }
 
 

@@ -11,6 +11,7 @@ export class UserBooksListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.libraryData.dateAdded.sort((n1, n2) => n1 - n2);
   }
 
 }

@@ -2,6 +2,7 @@ import { IVolumenInfo, IImageLinks } from './ibooksresponse';
 
 export class Book{
     title:string;
+    dateAdded:number;
     // authors:string[];
     // publisher: string;
     // description: string;
@@ -13,6 +14,7 @@ export class Book{
 
     constructor(title:string){
         this.title = title;
+        this.dateAdded = Date.now();
         // this.authors = authors;
         // this.description = description;
         // this.smallThumbnail = smallThumbnail;
