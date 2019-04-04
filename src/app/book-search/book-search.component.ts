@@ -19,9 +19,6 @@ export class BookSearchComponent implements OnInit {
   getBookDetails(bookName: string): boolean {
     this._booksService.getBookData(bookName).subscribe(bookData => {
       this.bookData = bookData;
-
-      this.bookData.items.forEach(book => 
-        console.log('getBookDetails: ' + book.volumeInfo.title));
     },
       error => this.errorMessage = <any>error);
     return false;

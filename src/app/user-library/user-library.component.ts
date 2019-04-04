@@ -1,15 +1,20 @@
+import { LibraryService } from './../library.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-user-library',
   templateUrl: './user-library.component.html',
-  styleUrls: ['./user-library.component.css']
+  styleUrls: ['./user-library.component.css'],
+  providers: [LibraryService]
 })
 export class UserLibraryComponent implements OnInit {
 
-  constructor() { }
+  libraryData;
+  constructor(private _library: LibraryService) { }
 
   ngOnInit() {
+    this._library.getBookLibrary().subscribe(libraryData =>
+      {this.libraryData = libraryData});
   }
 
 }

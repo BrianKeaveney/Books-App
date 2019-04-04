@@ -11,6 +11,8 @@ import { BookListComponent } from './book-list/book-list.component';
 import { UserLibraryComponent } from './user-library/user-library.component';
 import { BookComponent } from './book/book.component';
 import { environment } from 'src/environments/environment';
+import { UserBooksListComponent } from './user-books-list/user-books-list.component';
+import { UserBookComponent } from './user-book/user-book.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { environment } from 'src/environments/environment';
     BookSearchComponent,
     BookListComponent,
     UserLibraryComponent,
-    BookComponent
+    BookComponent,
+    UserBooksListComponent,
+    UserBookComponent
   ],
   imports: [
     BrowserModule,

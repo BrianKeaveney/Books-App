@@ -1,3 +1,4 @@
+import { LibraryService } from './../library.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,9 +10,14 @@ export class BookComponent implements OnInit {
 
   @Input() book;
 
-  constructor() { }
+  constructor(private _library: LibraryService) { }
 
   ngOnInit() {
   }
 
+  addTheBook(title:string):boolean{
+    console.log("function called");
+    this._library.addBook({title});
+    return false;
+  }
 }
