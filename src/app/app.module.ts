@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -13,8 +14,9 @@ import { BookComponent } from './book/book.component';
 import { environment } from 'src/environments/environment';
 import { UserBooksListComponent } from './user-books-list/user-books-list.component';
 import { UserBookComponent } from './user-book/user-book.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import { CommonModule } from '@angular/common';
+import { ToastrModule } from 'ngx-toastr';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({timeOut: 1500, positionClass: 'toast-bottom-center',preventDuplicates: true,}),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
