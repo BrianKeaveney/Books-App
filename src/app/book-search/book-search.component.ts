@@ -11,14 +11,16 @@ export class BookSearchComponent implements OnInit {
   bookData: IBooksResponse;
   errorMessage:string;
   
-  constructor(private _booksService: BooksApiService) { }
+  constructor(private _booksService: BooksApiService) {
+   }
 
   ngOnInit() {
   }
 
   getBookDetails(bookName: string): boolean {
     this._booksService.getBookData(bookName).subscribe(bookData => {
-      this.bookData = bookData;
+      this.bookData = bookData; console.log(this.bookData);
+
     },
       error => this.errorMessage = <any>error);
     return false;

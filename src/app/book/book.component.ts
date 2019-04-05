@@ -2,7 +2,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Book } from './../book';
 import { LibraryService } from './../library.service';
 import { Component, OnInit, Input } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-book',
@@ -10,10 +9,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
-  current = 8;
   @Input() book;
 
-  constructor(private _library: LibraryService, private toastr: ToastrService) { }
+  constructor(private _library: LibraryService, private toastr: ToastrService) {
+  }
 
   ngOnInit() {
   }
