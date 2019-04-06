@@ -1,0 +1,9 @@
+<div *ngIf="!show">
+    <button (click)="show = !show" class="addReview">add review</button>
+</div>
+<div *ngIf="show">
+  <form>
+    <textarea rows="4" cols="50"></textarea>
+  </form>
+  <button type="submit" (click)="show = !show" >Submit</button>
+</div>

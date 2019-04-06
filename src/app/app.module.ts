@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BookRatingComponent } from './book-rating/book-rating.component';
+import { AddReviewComponent } from './add-review/add-review.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BookRatingComponent } from './book-rating/book-rating.component';
     BookComponent,
     UserBooksListComponent,
     UserBookComponent,
-    BookRatingComponent
+    BookRatingComponent,
+    AddReviewComponent
   ],
   imports: [
     BrowserModule,
