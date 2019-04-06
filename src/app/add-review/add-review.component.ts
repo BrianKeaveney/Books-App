@@ -10,15 +10,20 @@ export class AddReviewComponent implements OnInit {
   buttonText:string = "Add Review";
   show:boolean = false;
   review:string;
+  starRating:number;
 
   constructor() { }
 
-  onSubmit(review:string, rating:number):boolean{
+  onSubmit(review:string):boolean{
     this.show = false;
     this.buttonText = "Edit Review";
     this.review = review;
-    console.log(rating);
     return false;
+  }
+
+  setRating(rating:number){
+    this.starRating = rating;
+    console.log(this.starRating)
   }
 
   ngOnInit() {
