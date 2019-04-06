@@ -1,9 +1,10 @@
 <div *ngIf="!show">
-    <button (click)="show = !show" class="addReview">add review</button>
+    <button (click)="show = !show" class="addReview">{{buttonText}}</button>
 </div>
 <div *ngIf="show">
   <form>
     <textarea rows="4" cols="50"></textarea>
+    <button type="reset" (click)="show = !show">Cancel</button>
+    <button type="submit" (click)="onSubmit()" >Submit</button>
   </form>
-  <button type="submit" (click)="show = !show" >Submit</button>
 </div>

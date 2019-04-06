@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddReviewComponent implements OnInit {
 
+  buttonText:string = "Add Review";
   show:boolean = false;
 
   constructor() { }
+
+  onSubmit(){
+    this.show = false;
+    this.buttonText = "Edit Review";
+  }
 
   ngOnInit() {
   }
