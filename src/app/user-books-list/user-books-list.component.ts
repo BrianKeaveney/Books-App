@@ -1,3 +1,5 @@
+import { EventEmitter } from 'protractor';
+import { LibraryService } from './../library.service';
 import { Book } from './../book';
 import { Component, OnInit, Input } from '@angular/core';
 import { _ } from 'underscore';
@@ -10,7 +12,13 @@ import { _ } from 'underscore';
 export class UserBooksListComponent implements OnInit {
 
   @Input() libraryData: Book[];
-  constructor() { }
+  index;
+  constructor(private _library: LibraryService) { }
+
+  removeTheBook(event: Book){
+    this.index = this.libraryData.findIndex(x => x === event);
+    this.libraryData.splice(this.index, 1);
+  }
 
   ngOnInit() {
   }

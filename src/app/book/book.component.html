@@ -7,9 +7,9 @@
       <h4>{{book.volumeInfo.title}}</h4>
       <h4>{{book.volumeInfo.authors[0]}}</h4>
       <p>{{book.volumeInfo.description}}</p>
-      <app-book-rating [bookRating]="book.volumeInfo.averageRating"></app-book-rating>
+      <app-book-rating [bookRating]="book.volumeInfo.averageRating" [starPermission]="true"></app-book-rating>
       <button class="btn btn-primary" (click)="addTheBook(book.volumeInfo.title,
-      book.volumeInfo.authors[0], book.volumeInfo.imageLinks.thumbnail)">add</button>
+      book.volumeInfo.authors[0], book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.averageRating)">add</button>
     </div>
   </div>
 </div>

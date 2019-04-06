@@ -7,7 +7,8 @@ import {NgbModule, NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./book-rating.component.css']
 })
 export class BookRatingComponent implements OnInit {
-  @Input() bookRating;
+  @Input() bookRating: number;
+  @Input() starPermission: boolean;
   constructor() { }
 
   ngOnInit() {

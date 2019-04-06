@@ -21,8 +21,8 @@ export class BookComponent implements OnInit {
     this.toastr.success(`${title} added to your library`);
   }
 
-  addTheBook(title:string, author:string, thumbnail:string):boolean{
-    let tempBook = new Book(title, Date.now(), author, thumbnail)
+  addTheBook(title:string, author:string, thumbnail:string, averageRating: number):boolean{
+    let tempBook = new Book(title, Date.now(), author, thumbnail, averageRating)
     this.showSucces(title);
     this._library.addBook(tempBook);
     return false;

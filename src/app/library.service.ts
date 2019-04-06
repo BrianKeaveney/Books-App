@@ -10,6 +10,7 @@ export class LibraryService {
 
   userLibraryCollection: AngularFirestoreCollection<Book>;
   libraryData;
+  index:number;
 
   constructor(private _afs: AngularFirestore) {
     this.userLibraryCollection = _afs.collection<Book>("library_data");
@@ -18,7 +19,6 @@ export class LibraryService {
    getBookLibrary():Observable<Book[]>{
     this.libraryData = this.userLibraryCollection.valueChanges();
 
-    // this.userLibraryCollection.valueChanges().subscribe(data => console.log("getUserLibrary: " + JSON.stringify(data)));
     return this.libraryData;
    }
 
@@ -26,5 +26,12 @@ export class LibraryService {
     this.userLibraryCollection.add(JSON.parse(JSON.stringify(book)));
    }
 
+  //  removeBook(book): void {
+  //   this.userLibraryCollection.doc(book.doc).delete().then(function() {
+  //     console.log("Document successfully deleted!");
+  //   }).catch(function(error) {
+  //       console.error("Error removing document: ", error);
+  //   });
+  //  }
 
 }
