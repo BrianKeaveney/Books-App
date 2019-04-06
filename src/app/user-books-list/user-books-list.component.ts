@@ -18,6 +18,7 @@ export class UserBooksListComponent implements OnInit {
   removeTheBook(event: Book){
     this.index = this.libraryData.findIndex(x => x === event);
     this.libraryData.splice(this.index, 1);
+    this._library.removeBook(event);
   }
 
   ngOnInit() {

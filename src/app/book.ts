@@ -4,6 +4,7 @@ export class Book{
     author: string;
     thumbnail: string;
     averageRating: number;
+    id: string;
 
 
     constructor(title:string, dateAdded:number, author:string, thumbnail:string, averageRating:number){
