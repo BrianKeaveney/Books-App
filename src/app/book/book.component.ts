@@ -17,13 +17,13 @@ export class BookComponent implements OnInit {
   ngOnInit() {
   }
 
-  showSucces(title:string) {
+  showSuccess(title:string) {
     this.toastr.success(`${title} added to your library`);
   }
 
   addTheBook(title:string, author:string, thumbnail:string, averageRating: number):boolean{
     let tempBook = new Book(title, Date.now(), author, thumbnail, averageRating)
-    this.showSucces(title);
+    this.showSuccess(title);
     this._library.addBook(tempBook);
     return false;
   }
