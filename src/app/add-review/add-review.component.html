@@ -3,8 +3,10 @@
 </div>
 <div *ngIf="show">
   <form>
-    <textarea rows="4" cols="50"></textarea>
+    <textarea class="form-control" rows="3" #review>{{review ? '': review.value}}</textarea>
+    <app-book-rating [starPermission]="false" (passBookRating)="($event)"></app-book-rating>
     <button type="reset" (click)="show = !show">Cancel</button>
-    <button type="submit" (click)="onSubmit()" >Submit</button>
+    <button type="submit" (click)="onSubmit(review.value, rating.value)" >Submit</button>
   </form>
 </div>
+<p>{{review}}</p>

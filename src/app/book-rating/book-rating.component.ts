@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {NgbModule, NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-book-rating',
@@ -9,8 +8,13 @@ import {NgbModule, NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 export class BookRatingComponent implements OnInit {
   @Input() bookRating: number;
   @Input() starPermission: boolean;
+  @Output() passBookRating: EventEmitter<number> = new EventEmitter();
+
   constructor() { }
 
+  sendBookRating() {
+    this.passBookRating.emit(this.bookRating);
+  }
   ngOnInit() {
   }
 

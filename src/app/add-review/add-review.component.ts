@@ -9,12 +9,16 @@ export class AddReviewComponent implements OnInit {
 
   buttonText:string = "Add Review";
   show:boolean = false;
+  review:string;
 
   constructor() { }
 
-  onSubmit(){
+  onSubmit(review:string, rating:number):boolean{
     this.show = false;
     this.buttonText = "Edit Review";
+    this.review = review;
+    console.log(rating);
+    return false;
   }
 
   ngOnInit() {
