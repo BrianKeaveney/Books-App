@@ -9,8 +9,9 @@ export class AddReviewComponent implements OnInit {
 
   buttonText:string = "Add Review";
   show:boolean = false;
-  review:string;
+  review:string="";
   starRating:number;
+  userReview:string = "";
 
   constructor() { }
 
@@ -18,6 +19,7 @@ export class AddReviewComponent implements OnInit {
     this.show = false;
     this.buttonText = "Edit Review";
     this.review = review;
+    this.userReview = review;
     return false;
   }
 

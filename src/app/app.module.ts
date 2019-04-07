@@ -19,6 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BookRatingComponent } from './book-rating/book-rating.component';
 import { AddReviewComponent } from './add-review/add-review.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AddReviewComponent } from './add-review/add-review.component';
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({timeOut: 1500, positionClass: 'toast-bottom-center',preventDuplicates: true,}),
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

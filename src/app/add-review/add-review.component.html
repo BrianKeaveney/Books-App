@@ -1,13 +1,21 @@
 <div *ngIf="!show">
     <button (click)="show = !show" class="addReview">{{buttonText}}</button>
 </div>
+
 <div *ngIf="show">
   <form>
-    <textarea class="form-control" rows="3" #review>{{review ? '': review.value}}</textarea>
-    <app-book-rating [starPermission]="false" (passBookRating)="setRating($event)"></app-book-rating>
+    <textarea class="form-control" rows="3" name="review" [(ngModel)]="userReview" #review></textarea>
+    <app-book-rating [starPermission]="false" (passBookRating)="setRating($event)" [bookRating]="starRating"></app-book-rating>
     <button type="reset" (click)="show = !show">Cancel</button>
     <button type="submit" (click)="onSubmit(review.value)" >Submit</button>
   </form>
 </div>
-<p>{{review}}</p>
-<!-- <p>{{starRating}}</p> -->
+
+<div *ngIf="review">
+  <div *ngIf="!show">
+      <p>{{review}}</p>
+      <app-book-rating [starPermission]="true" [bookRating]="starRating"></app-book-rating>
+  </div>
+</div>
+
+

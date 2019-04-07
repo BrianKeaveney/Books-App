@@ -14,27 +14,20 @@ export class BookRatingComponent implements OnInit {
 
   constructor() {}
 
-  resolveAfter2Seconds() {
+  resolveAfter1MilSecond() {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(this.bookRating);
-      }, 5);
+      }, 1);
     });
   }
  
  async getValueWithAsync() {
-  this.value = <number>await this.resolveAfter2Seconds();
-  console.log(`async result: ${this.value}`);
+  this.value = <number>await this.resolveAfter1MilSecond();
+  this.sendBookRating(this.value);
 }
   sendBookRating(bookRating:number) {
-    // console.log(bookRating);
-    // console.log(this.bookRating);
-    // while(true)
-    // {
-    //   console.log(this.bookRating);
-
-    // }
-    this.passBookRating.emit(bookRating);
+    this.passBookRating.emit(this.value);
   }
 
   ngOnInit() {
