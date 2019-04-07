@@ -14,16 +14,16 @@ export class BookRatingComponent implements OnInit {
 
   constructor() {}
 
-  resolveAfter2Seconds(x) {
+  resolveAfter2Seconds() {
     return new Promise(resolve => {
       setTimeout(() => {
-        resolve(x);
-      }, 10000);
+        resolve(this.bookRating);
+      }, 5);
     });
   }
  
- async getValueWithAsync(bookRating) {
-  this.value = <number>await this.resolveAfter2Seconds(bookRating);
+ async getValueWithAsync() {
+  this.value = <number>await this.resolveAfter2Seconds();
   console.log(`async result: ${this.value}`);
 }
   sendBookRating(bookRating:number) {
