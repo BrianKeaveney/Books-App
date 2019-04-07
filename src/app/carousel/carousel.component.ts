@@ -1,5 +1,6 @@
+import { EventEmitter } from '@angular/core';
 import { SearchHistoryService } from './../search-history.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import { PastBook } from '../PastBook';
 
@@ -12,12 +13,14 @@ import { PastBook } from '../PastBook';
 export class CarouselComponent implements OnInit {
 
   items:PastBook[];
+  @Output() passBookName: EventEmitter<any> = new EventEmitter();
+
 
   constructor(config: NgbCarouselConfig, private _historyService: SearchHistoryService) {
   }
 
   makeSearch(bookSearch:string){
-    console.log(bookSearch);
+    this.passBookName.emit(bookSearch);
   }
 
   ngOnInit() {

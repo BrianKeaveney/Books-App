@@ -5,6 +5,6 @@
     </button>
 </form>
 <div *ngIf="!show">
-    <app-carousel></app-carousel>
+    <app-carousel (passBookName)="getBookDetails($event)"></app-carousel>
 </div> 
 <app-book-list [bookData]="bookData"></app-book-list>
