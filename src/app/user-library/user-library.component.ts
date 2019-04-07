@@ -11,7 +11,9 @@ import { _ } from 'underscore';
 })
 export class UserLibraryComponent implements OnInit {
 
+  index:number;
   libraryData: Book[];
+  yourBook:Book;
   constructor(private _library: LibraryService) { }
 
   ngOnInit() {

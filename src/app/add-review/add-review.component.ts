@@ -39,7 +39,6 @@ export class AddReviewComponent implements OnInit {
   setUserReview(){
     if(this.isReview == false){
       this.userReview = this.review;
-      console.log(this.userReview);
     }else{
       this.userReview = "";
     }
