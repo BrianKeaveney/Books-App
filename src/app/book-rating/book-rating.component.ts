@@ -10,9 +10,22 @@ export class BookRatingComponent implements OnInit {
   @Input() bookRating: number;
   @Input() starPermission: boolean;
   @Output() passBookRating: EventEmitter<any> = new EventEmitter();
+  value;
 
-  constructor() { }
+  constructor() {}
 
+  resolveAfter2Seconds(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 10000);
+    });
+  }
+ 
+ async getValueWithAsync(bookRating) {
+  this.value = <number>await this.resolveAfter2Seconds(bookRating);
+  console.log(`async result: ${this.value}`);
+}
   sendBookRating(bookRating:number) {
     // console.log(bookRating);
     // console.log(this.bookRating);
