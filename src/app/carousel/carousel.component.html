@@ -1,0 +1,20 @@
+<h1>Recent Searches</h1>
+<p>Click on a book to view the search</p>
+<br>
+<div class="row">
+  <div class="col-sm-6 col-xs-6 col-lg-6">
+    <ngb-carousel *ngIf="items" [interval]="2000" [showNavigationArrows]="false" class="myCarousel">
+        <ng-template ngbSlide *ngFor="let item of items;let i=index">
+          <img src="{{item.thumbnail}}" alt="Random slide" class="sizeImages" (click)="makeSearch(item.searchName)">
+        </ng-template>
+    </ngb-carousel>
+  </div>
+
+  <div class="col-sm-6 col-xs-6 col-lg-6">
+    <ngb-carousel *ngIf="items" [interval]="1500" [showNavigationArrows]="false" class="myCarousel">
+        <ng-template ngbSlide *ngFor="let item of items;let i=index">
+          <img src="{{items[i+1].thumbnail}}" alt="Random slide" class="sizeImages" (click)="makeSearch(items[i+1].searchName)">
+        </ng-template>
+    </ngb-carousel>
+  </div>
+</div>

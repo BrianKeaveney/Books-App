@@ -20,6 +20,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BookRatingComponent } from './book-rating/book-rating.component';
 import { AddReviewComponent } from './add-review/add-review.component';
 import { FormsModule } from '@angular/forms';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     UserBooksListComponent,
     UserBookComponent,
     BookRatingComponent,
-    AddReviewComponent
+    AddReviewComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

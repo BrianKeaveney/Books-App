@@ -3,6 +3,8 @@
     <button (click)="getBookDetails(bookName.value)" type="submit" class="btn btn-outline-primary my-2 my-sm-0">
         Search
     </button>
-</form> 
-
+</form>
+<div *ngIf="!show">
+    <app-carousel></app-carousel>
+</div> 
 <app-book-list [bookData]="bookData"></app-book-list>

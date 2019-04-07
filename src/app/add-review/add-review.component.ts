@@ -18,16 +18,14 @@ export class AddReviewComponent implements OnInit {
 
   constructor() { }
 
-  onSubmit(review:string):boolean{
+  onSubmit(review:string){
     this.show = false;
     this.buttonText = "Edit Review";
     this.isReview = false;
     this.review = review;
     this.userReview = review;
-    console.log(this.userReview)
     this.update = [this.review, this.starRating, this.isReview]
     this.passBookRating.emit(this.update);
-    return false;
   }
 
   setButtonText(){
