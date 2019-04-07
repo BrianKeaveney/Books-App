@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-add-review',
@@ -7,28 +7,53 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddReviewComponent implements OnInit {
 
-  buttonText:string = "Add Review";
+  buttonText:string;
   show:boolean = false;
-  review:string="";
-  starRating:number;
-  userReview:string = "";
+  userReview:string;
+  update: any[];
+  @Input() review:string;
+  @Input() starRating:number;
+  @Input() isReview:boolean;
+  @Output() passBookRating: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   onSubmit(review:string):boolean{
     this.show = false;
     this.buttonText = "Edit Review";
+    this.isReview = false;
     this.review = review;
     this.userReview = review;
+    console.log(this.userReview)
+    this.update = [this.review, this.starRating, this.isReview]
+    this.passBookRating.emit(this.update);
     return false;
+  }
+
+  setButtonText(){
+    if(this.isReview){
+      this.buttonText = "Add Review"
+    }else{
+      this.buttonText = "Edit Review";
+    }
+  }
+
+  setUserReview(){
+    if(this.isReview == false){
+      this.userReview = this.review;
+      console.log(this.userReview);
+    }else{
+      this.userReview = "";
+    }
   }
 
   setRating(rating:number){
     this.starRating = rating;
-    console.log(this.starRating)
   }
 
   ngOnInit() {
+    this.setButtonText();
+    this.setUserReview();
   }
 
 }

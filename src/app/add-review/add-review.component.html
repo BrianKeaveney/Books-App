@@ -4,7 +4,7 @@
 
 <div *ngIf="show">
   <form>
-    <textarea class="form-control" rows="3" name="review" [(ngModel)]="userReview" #review></textarea>
+    <textarea class="form-control" rows="3" name="userReview" [(ngModel)]="userReview" #review></textarea>
     <app-book-rating [starPermission]="false" (passBookRating)="setRating($event)" [bookRating]="starRating"></app-book-rating>
     <button type="reset" (click)="show = !show">Cancel</button>
     <button type="submit" (click)="onSubmit(review.value)" >Submit</button>

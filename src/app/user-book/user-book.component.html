@@ -7,7 +7,8 @@
         <h4>{{bookData.title}}</h4>
         <h4>{{bookData.author}}</h4>
         <button class="btn btn-primary" (click)="removeTheBook()">remove</button>
-        <app-add-review></app-add-review>
+        <app-add-review [review]="bookData.review" [starRating]="bookData.userRating" 
+        [isReview]="bookData.isReview" (passBookRating)=updateTheBook($event)></app-add-review>
       </div>
     </div>
 </div>

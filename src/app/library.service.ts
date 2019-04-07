@@ -39,4 +39,12 @@ export class LibraryService {
     });
    }
 
+   updateBook(book): void {
+     this.userLibraryCollection.doc(book.$key).update(book).then(function(){
+       console.log("Document successfully updated!");
+     }).catch(function(error){
+       console.error("Error updating document: ", error)
+     });
+   }
+
 }

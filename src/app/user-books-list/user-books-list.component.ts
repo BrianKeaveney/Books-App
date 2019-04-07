@@ -12,7 +12,8 @@ import { _ } from 'underscore';
 export class UserBooksListComponent implements OnInit {
 
   @Input() libraryData: Book[];
-  index;
+  index:number;
+  
   constructor(private _library: LibraryService) { }
 
   removeTheBook(event: Book){

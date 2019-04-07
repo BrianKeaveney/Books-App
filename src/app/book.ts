@@ -4,7 +4,9 @@ export class Book{
     author: string;
     thumbnail: string;
     averageRating: number;
-    id: string;
+    review:string="";
+    userRating:number;
+    isReview:boolean=true;
 
 
     constructor(title:string, dateAdded:number, author:string, thumbnail:string, averageRating:number){
